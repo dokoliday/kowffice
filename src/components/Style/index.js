@@ -35,5 +35,14 @@ const Background = styled.div`
   background: linear-gradient(0.25turn, #00498e, #e50096);
   width: 100vw;
 `;
+const Paragraph = styled.p`
+@media only screen and (min-width: 1024px) {
+  font-size: 1vw;
+  text-align: center;
 
-export { TitleH1, TitleH3, Background };
+};
+@media only screen and (max-width: 1024px) {
+  font-size: 2vw;
+  text-align: center;
+`;
+export { TitleH1, TitleH3, Background, Paragraph };
