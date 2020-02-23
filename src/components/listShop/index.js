@@ -1,12 +1,19 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { TitleH1,  Background,Paragraph} from "../Style";
 
 const Shop = ({ listItems, setQuantity }) => {
   return (
     <div style={{ borderLeft: " solid black", height: "100%" }}>
       <Row>
-        {listItems.map(item => {
-          if (item.selected === true) {
+        <Col>
+        <Paragraph>Selected Quantities</Paragraph>
+        </Col>
+      </Row>
+      <Row>
+        {listItems
+          .filter(item => item.selected === true)
+          .map(item => {
             return (
               <Col md={{ span: 3, offset: 2 }}>
                 <div
@@ -42,9 +49,7 @@ const Shop = ({ listItems, setQuantity }) => {
                 </div>
               </Col>
             );
-          }
-          return;
-        })}
+          })}
       </Row>
     </div>
   );
