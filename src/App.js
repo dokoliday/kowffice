@@ -3,14 +3,15 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../src/components/Home";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import Shop from "../src/components/Shop";
+
 const App = () => {
   return (
     <>
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/shop" component={Shop} />
       </Switch>
       <Footer />
     </>
