@@ -4,13 +4,13 @@ import { TitleH3, Background } from "../../components/Style";
 
 import ListShop from "../../components/listShop";
 import { Row, Col } from "react-bootstrap";
-import { furnitures } from "../../mockData/furnitures";
+import { officeCatalogue } from "../../mockData/officeCatalogue";
 
-import ItemsButtons from "../../components/ItemsButtons";
+import ItemsButtons from "../../components/ItemsShopButtons";
 import Facturation from "../../components/Facturation";
 
 const Shop = () => {
-  const [listItems, setListItems] = useState(furnitures);
+  const [listItems, setListItems] = useState(officeCatalogue);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

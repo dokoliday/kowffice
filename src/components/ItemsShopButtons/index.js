@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
-import { Paragraph } from "../../components/Style";
+import { Paragraph } from "../Style";
 
 import selectedIcon from "../../assets/selected.png";
 import unSelectedIcon from "../../assets/unSelected.png";
@@ -44,7 +44,17 @@ const ItemsButtons = ({ onSelected, listItems }) => {
       </Row>
     );
   });
-  return displayItemsButtons;
+
+  return (
+    <>
+      <Row>
+        <Col>
+          <Paragraph>Selected Item</Paragraph>
+        </Col>
+      </Row>
+      {displayItemsButtons}
+    </>
+  );
 };
 
 export default ItemsButtons;
