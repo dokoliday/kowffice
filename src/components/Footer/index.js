@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Background } from "../Style";
+import { Background ,Paragraph} from "../Style";
 
 const FooterBackground = styled(Background)`
   @media only screen and (max-width: 1024px) {
@@ -14,18 +14,6 @@ const FooterBackground = styled(Background)`
     margin-top: 6vh;
     padding: 1vh;
   }
-`;
-const Paragraph = styled.p`
-@media only screen and (min-width: 1024px) {
-  font-size: 1.5vw;
-  text-align: center;
-  color: white;
-
-};
-@media only screen and (max-width: 1024px) {
-  font-size: 4vw;
-  text-align: center;
-  color: white;
 `;
 
 const Footer = () => {
