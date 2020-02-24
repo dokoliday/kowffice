@@ -20,23 +20,20 @@ const InventoryList = ({ listItems, toCommand }) => {
   return (
     <>
       <h2>Inventory : </h2>
-      {listItems.map(item => {
+      {listItems.map((item, key) => {
         return (
-          <>
-            <ListGroup>
-              <ListGroup.Item>
-                <Row>
-                  <Col md={6}>
-                    {item.name} : {item.quantity}
-                  </Col>
-                  <Col md={6}>
-                    need to be :{" "}
-                    {displayCommandButton(item.toCommand, item.name)}
-                  </Col>
-                </Row>
-              </ListGroup.Item>
-            </ListGroup>
-          </>
+          <ListGroup key={key}>
+            <ListGroup.Item>
+              <Row>
+                <Col md={6}>
+                  {item.name} : {item.quantity}
+                </Col>
+                <Col md={6}>
+                  need to be : {displayCommandButton(item.toCommand, item.name)}
+                </Col>
+              </Row>
+            </ListGroup.Item>
+          </ListGroup>
         );
       })}
     </>

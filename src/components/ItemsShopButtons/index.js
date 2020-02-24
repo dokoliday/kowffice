@@ -10,37 +10,35 @@ const ItemsButtons = ({ onSelected, listItems }) => {
   const displayItemsButtons = listItems.map((item, key) => {
     if (item.selected === false) {
       return (
-        <Row>
+        <Row key={key}>
           <Col xl={{ span: 7, offset: 2 }} xs={{ span: 8, offset: 2 }}>
             <Button
               variant="outline-secondary"
               onClick={() => onSelected(item.name)}
-              key={key}
               style={{ margin: "1vh", width: "60%" }}
             >
               <Paragraph>{item.name}</Paragraph>
             </Button>
           </Col>
           <Col>
-            <img src={unSelectedIcon} width="30vw" alt="unSelected"/>
+            <img src={unSelectedIcon} width="30vw" alt="unSelected" />
           </Col>
         </Row>
       );
     }
     return (
-      <Row>
+      <Row key={key}>
         <Col xl={{ span: 7, offset: 2 }} xs={{ span: 8, offset: 2 }}>
           <Button
             variant="outline-secondary"
             onClick={() => onSelected(item.name)}
-            key={key}
             style={{ margin: "1vh", width: "60%" }}
           >
             <Paragraph>{item.name}</Paragraph>
           </Button>
         </Col>
         <Col>
-          <img src={selectedIcon} width="30vw" alt="selected"/>
+          <img src={selectedIcon} width="30vw" alt="selected" />
         </Col>
       </Row>
     );

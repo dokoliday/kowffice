@@ -5,10 +5,10 @@ import { Row, Col } from "react-bootstrap";
 const DisplayItemsByType = ({ setQuantity, type, listItems }) => {
   return listItems
     .filter(items => items.type === type)
-    .map(item => {
+    .map((item,key) => {
       if (item) {
         return (
-          <Col>
+          <Col key={key}>
             <div
               style={{
                 border: "solid black",

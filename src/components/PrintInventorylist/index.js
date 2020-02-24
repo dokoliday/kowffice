@@ -34,9 +34,9 @@ const PrintIventoryList = ({ listItems, show, handleClose, handleShow }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {listItems.map(item => {
+          {listItems.map((item, key) => {
             return (
-              <Row>
+              <Row key={key}>
                 <Col md={{ span: 3, offset: 2 }}>
                   <p>{item.name}</p>
                 </Col>

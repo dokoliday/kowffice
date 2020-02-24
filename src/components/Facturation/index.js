@@ -38,7 +38,7 @@ const Facturation = ({ listItems, handleClose, handleShow, show }) => {
                   </Col>
                 </Row>
               );
-            }return <></>;
+            }return null
           })}
           <p>Total : {total} euros</p>
         </Modal.Body>
