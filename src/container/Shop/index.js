@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import { TitleH3, Background } from "../../components/Style";
-
-import ListShop from "../../components/listShop";
-import { Row, Col } from "react-bootstrap";
-import { officeCatalogue } from "../../mockData/officeCatalogue";
-
 import ItemsButtons from "../../components/ItemsShopButtons";
 import Facturation from "../../components/Facturation";
+import ListShop from "../../components/listShop";
+
+import { TitleH3, Background, Container } from "../../components/Style";
+import { Row, Col } from "react-bootstrap";
+
+import { officeCatalogue } from "../../mockData/officeCatalogue";
 
 const Shop = () => {
   const [listItems, setListItems] = useState(officeCatalogue);
@@ -48,19 +48,13 @@ const Shop = () => {
   };
 
   return (
-    <>
+    <Container>
       <Background>
-        <TitleH3>Select All your Office Items</TitleH3>
+        <TitleH3>Order new Office Items</TitleH3>
       </Background>
       <Row>
         <Col xl={3}>
           <ItemsButtons onSelected={onSelected} listItems={listItems} />
-          <Facturation
-        show={show}
-        listItems={listItems}
-        handleClose={handleClose}
-        handleShow={handleShow}
-      />
         </Col>
         <Col xl={9}>
           <ListShop
@@ -70,8 +64,13 @@ const Shop = () => {
           />
         </Col>
       </Row>
-   
-    </>
+      <Facturation
+        show={show}
+        listItems={listItems}
+        handleClose={handleClose}
+        handleShow={handleShow}
+      />
+    </Container>
   );
 };
 export default Shop;

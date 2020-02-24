@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Background ,Paragraph} from "../Style";
+import { Background, Paragraph } from "../Style";
 
 const FooterBackground = styled(Background)`
-  @media only screen and (max-width: 1024px) {
-    position: absolute;
-    bottom: 0;
-    padding: 1vh;
-  }
   @media only screen and (min-width: 1024px) {
-    margin-bottom: 0;
-    margin-top: 6vh;
-    padding: 1vh;
+    position: absolute;
+    bottom: -15vh;
+    width: 100%;
   }
 `;
 
 const Footer = () => {
-  return (
-    <FooterBackground>
-      <Paragraph>copyright 2020</Paragraph>
-    </FooterBackground>
-  );
+  const screenSize = window.screen.width;
+  const shouldRenderFooter = () => {
+    if (screenSize >= 1024) {
+      return (
+        <FooterBackground>
+          <Paragraph>copyright 2020</Paragraph>
+        </FooterBackground>
+      );
+    }
+    return <></>;
+  };
+  return shouldRenderFooter();
 };
 export default Footer;

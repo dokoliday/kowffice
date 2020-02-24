@@ -1,9 +1,11 @@
 import React from "react";
-import { TitleH1,  Background,Paragraph} from "../Style";
-import office from "../../assets/office.jpg";
+
 import styled from "styled-components";
-import { Button, Row, Col } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
+import { TitleH1, Background, Paragraph, Container } from "../Style";
+import { Button, Row, Col, Nav } from "react-bootstrap";
+
+import office from "../../assets/office.jpg";
+
 
 const Image = styled.img`
   @media only screen and (min-width: 600px) {
@@ -21,7 +23,7 @@ const Image = styled.img`
 `;
 const Home = () => {
   return (
-    <>
+    <Container>
       <Background>
         <TitleH1>KOWFFICE</TitleH1>
       </Background>
@@ -42,7 +44,7 @@ const Home = () => {
         </Col>
       </Row>
       <Image src={office} />
-    </>
+    </Container>
   );
 };
 export default Home;

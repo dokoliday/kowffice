@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Navbar, Nav } from "react-bootstrap";
 
 const DisplayNavbar = () => {
@@ -10,7 +11,6 @@ const DisplayNavbar = () => {
         <Nav className="mr-auto">
           <Nav.Link href="/inventory">Inventory</Nav.Link>
           <Nav.Link href="/shop">Shop</Nav.Link>
-          <Nav.Link href="/contacts">Contacts</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

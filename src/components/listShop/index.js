@@ -1,21 +1,30 @@
 import React from "react";
+
 import { Row, Col } from "react-bootstrap";
-import { TitleH1,  Background,Paragraph} from "../Style";
+import styled from "styled-components";
+import { Paragraph } from "../Style";
+
+const Wrapper = styled.div`
+  @media only screen and (min-width: 1024px) {
+    border-left: solid black;
+    height: 100%;
+  }
+`;
 
 const Shop = ({ listItems, setQuantity }) => {
   return (
-    <div style={{ borderLeft: " solid black", height: "100%" }}>
+    <Wrapper>
       <Row>
         <Col>
-        <Paragraph>Selected Quantities</Paragraph>
+          <Paragraph>Selected Quantities</Paragraph>
         </Col>
       </Row>
       <Row>
         {listItems
           .filter(item => item.selected === true)
-          .map(item => {
+          .map((item, key) => {
             return (
-              <Col md={{ span: 3, offset: 2 }}>
+              <Col md={{ span: 3, offset: 2 }} key={key}>
                 <div
                   style={{
                     border: "solid black",
@@ -30,6 +39,7 @@ const Shop = ({ listItems, setQuantity }) => {
                     width="100vw"
                     height="100vh"
                     style={{ paddingBottom: "2vh" }}
+                    alt={item.name}
                   />
                   <Row>
                     <Col xs={4}>
@@ -51,7 +61,7 @@ const Shop = ({ listItems, setQuantity }) => {
             );
           })}
       </Row>
-    </div>
+    </Wrapper>
   );
 };
 export default Shop;

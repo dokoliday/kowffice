@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Button, Row, Col } from "react-bootstrap";
 import { Paragraph } from "../Style";
 
@@ -21,7 +22,7 @@ const ItemsButtons = ({ onSelected, listItems }) => {
             </Button>
           </Col>
           <Col>
-            <img src={unSelectedIcon} width="30vw" />
+            <img src={unSelectedIcon} width="30vw" alt="unSelected"/>
           </Col>
         </Row>
       );
@@ -39,7 +40,7 @@ const ItemsButtons = ({ onSelected, listItems }) => {
           </Button>
         </Col>
         <Col>
-          <img src={selectedIcon} width="30vw" />
+          <img src={selectedIcon} width="30vw" alt="selected"/>
         </Col>
       </Row>
     );

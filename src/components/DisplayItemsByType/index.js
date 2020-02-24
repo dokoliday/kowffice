@@ -22,6 +22,7 @@ const DisplayItemsByType = ({ setQuantity, type, listItems }) => {
                 width="100vw"
                 height="100vh"
                 style={{ paddingBottom: "2vh" }}
+                alt={item.name}
               />
               <Row>
                 <Col xs={4}>
@@ -42,7 +43,7 @@ const DisplayItemsByType = ({ setQuantity, type, listItems }) => {
           </Col>
         );
       }
-      return;
+      return<></>;
     });
 };
 

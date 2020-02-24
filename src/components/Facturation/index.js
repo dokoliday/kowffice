@@ -18,7 +18,7 @@ const Facturation = ({ listItems, handleClose, handleShow, show }) => {
     <>
       <Row className="justify-content-md-center">
         <Button variant="primary" onClick={handleShow} margin="1vh">
-          <img src={panierIcon} width="50" />
+          <img src={panierIcon} width="50" alt="panier"/>
         </Button>
       </Row>
       <Modal show={show} onHide={handleClose}>
@@ -26,10 +26,10 @@ const Facturation = ({ listItems, handleClose, handleShow, show }) => {
           <Modal.Title>Facture</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {listItems.map(item => {
+          {listItems.map((item, key) => {
             if (item.selected === true) {
               return (
-                <Row>
+                <Row key={key}>
                   <Col md={{ span: 3, offset: 2 }}>
                     <p>{item.name}</p>
                   </Col>
@@ -38,8 +38,7 @@ const Facturation = ({ listItems, handleClose, handleShow, show }) => {
                   </Col>
                 </Row>
               );
-            }
-            return;
+            }return <></>;
           })}
           <p>Total : {total} euros</p>
         </Modal.Body>

@@ -1,9 +1,6 @@
 import React from "react";
 
-import { Navbar, Nav } from "react-bootstrap";
-
-import { Modal, Button, Col, Row } from "react-bootstrap";
-
+import { Modal, Button, Col, Row, Nav } from "react-bootstrap";
 import { Paragraph } from "../../components/Style";
 
 const PrintIventoryList = ({ listItems, show, handleClose, handleShow }) => {
@@ -20,10 +17,7 @@ const PrintIventoryList = ({ listItems, show, handleClose, handleShow }) => {
       </Row>
       <Row>
         <Nav.Link href="/shop">
-          <Button
-            variant="outline-success"
-            style={{ margin: "1vh" }}
-          >
+          <Button variant="outline-success" style={{ margin: "1vh" }}>
             <Paragraph>Go To Shop</Paragraph>
           </Button>
         </Nav.Link>
@@ -39,7 +33,6 @@ const PrintIventoryList = ({ listItems, show, handleClose, handleShow }) => {
               .replace(/-/g, "/")}
           </Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           {listItems.map(item => {
             return (

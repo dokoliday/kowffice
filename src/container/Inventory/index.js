@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 
-import { Paragraph, Background, TitleH3 } from "../../components/Style";
-
-import { Row, Col, Button } from "react-bootstrap";
-import { officeCatalogue } from "../../mockData/officeCatalogue";
-
 import DisplayItemsByType from "../../components/DisplayItemsByType";
 import InventoryList from "../../components/InventoryList";
 import PrintIventoryList from "../../components/PrintInventorylist";
+
+import {
+  Paragraph,
+  Background,
+  TitleH3,
+  Container
+} from "../../components/Style";
+import { Row, Col, Button } from "react-bootstrap";
+
+import { officeCatalogue } from "../../mockData/officeCatalogue";
 
 const Inventory = () => {
   const [listItems, setListItems] = useState(officeCatalogue);
@@ -49,33 +54,33 @@ const Inventory = () => {
   };
 
   return (
-    <>
+    <Container>
       <Background>
         <TitleH3>Office Inventory</TitleH3>
       </Background>
       <Row>
         <Col md={{ span: 3 }}>
-      <Button
-        variant="outline-primary"
-        style={{ margin: "1vh" }}
-        onClick={() => setType("electronics")}
-      >
-        <Paragraph>Electronics</Paragraph>
-      </Button>
-      <Button
-        variant="outline-danger"
-        style={{ margin: "1vh" }}
-        onClick={() => setType("furniture")}
-      >
-        <Paragraph>Furnitures</Paragraph>
-      </Button>
-      <Button
-        variant="outline-warning"
-        style={{ margin: "1vh" }}
-        onClick={() => setType("accessory")}
-      >
-        <Paragraph>Accessory</Paragraph>
-      </Button>
+          <Button
+            variant="outline-primary"
+            style={{ margin: "1vh" }}
+            onClick={() => setType("electronics")}
+          >
+            <Paragraph>Electronics</Paragraph>
+          </Button>
+          <Button
+            variant="outline-danger"
+            style={{ margin: "1vh" }}
+            onClick={() => setType("furniture")}
+          >
+            <Paragraph>Furnitures</Paragraph>
+          </Button>
+          <Button
+            variant="outline-warning"
+            style={{ margin: "1vh" }}
+            onClick={() => setType("accessory")}
+          >
+            <Paragraph>Accessory</Paragraph>
+          </Button>
           <DisplayItemsByType
             type={type}
             setQuantity={setQuantity}
@@ -94,7 +99,7 @@ const Inventory = () => {
           />
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 export default Inventory;
