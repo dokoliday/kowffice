@@ -1,12 +1,12 @@
 KOWFFICE test technique APP
 
-a little app to make th ofice inventory and a shop part 
+a little app to make the office inventory and a shop part 
 
 future features to implement:
 
-- database base with sedding all Inventory Items and Shop items
-- Docker environement 
-- graphQlinterface
+- database base seedding all Inventory Items and Shop items
+- Docker environnement 
+- graphQl interface
 - useReducer with context to give a global state for a specifique User inventory
 - integration test
 
